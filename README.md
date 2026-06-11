@@ -1,4 +1,4 @@
-\# Kernel-Based Fault Classification in Analog Circuits
+# Kernel-Based Fault Classification in Analog Circuits
 
 
 
@@ -14,13 +14,13 @@ RC Ladder) using LTspice simulation data and SVM kernel comparison.
 
 
 
-\## Live Demo
+## Live Demo
 
 **[Try it here](https://analogcircuitsfaultclassification.streamlit.app/)**
 
 
 
-\## Overview
+## Overview
 
 - 1019 samples generated from real LTspice `.step param` parameter sweep simulations
 
@@ -34,7 +34,7 @@ RC Ladder) using LTspice simulation data and SVM kernel comparison.
 
 
 
-\## Project Structure
+## Project Structure
 fault-classification-project/
 ├── app.py                  # Streamlit web application
 ├── requirements.txt
