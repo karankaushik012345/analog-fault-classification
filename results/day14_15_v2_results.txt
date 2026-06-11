@@ -1,0 +1,62 @@
+============================================================
+OPTION B — 17 FEATURES (added f17_dc_level)
+============================================================
+Features: 17 | Samples: 1019 | Classes: 20
+
+--- BASELINE (default params) ---
+  Linear      : 76.47%
+  RBF         : 69.61%
+  Polynomial  : 74.02%
+
+--- GRIDSEARCHCV TUNING (n_jobs=1) ---
+
+KERNEL: Linear
+  Best C=100 | CV=77.79% | Test=75.98%
+
+KERNEL: RBF
+  Best C=100, gamma=0.1
+  CV=77.91% | Test=76.96%
+
+KERNEL: Polynomial
+  Best C=100, gamma=0.1, degree=3
+  CV=78.04% | Test=76.47%
+
+============================================================
+BEST MODEL: RBF at 76.96%
+============================================================
+
+Classification Report:
+                   precision    recall  f1-score   support
+
+  RC_LADDER_drift      0.500     0.300     0.375        10
+  RC_LADDER_noise      1.000     1.000     1.000        10
+ RC_LADDER_normal      0.462     0.600     0.522        10
+   RC_LADDER_open      1.000     1.000     1.000        10
+  RC_LADDER_short      1.000     0.100     0.182        10
+         RC_drift      0.750     0.300     0.429        10
+         RC_noise      1.000     1.000     1.000        11
+        RC_normal      0.588     0.909     0.714        11
+          RC_open      0.000     0.000     0.000        10
+         RC_short      0.526     1.000     0.690        10
+        RLC_drift      1.000     1.000     1.000        11
+        RLC_noise      1.000     1.000     1.000        10
+       RLC_normal      0.909     1.000     0.952        10
+         RLC_open      0.500     1.000     0.667        10
+        RLC_short      1.000     1.000     1.000        10
+ SALLEN_KEY_drift      0.800     0.364     0.500        11
+ SALLEN_KEY_noise      1.000     1.000     1.000        10
+SALLEN_KEY_normal      0.533     0.800     0.640        10
+  SALLEN_KEY_open      1.000     1.000     1.000        10
+ SALLEN_KEY_short      0.909     1.000     0.952        10
+
+         accuracy                          0.770       204
+        macro avg      0.774     0.769     0.731       204
+     weighted avg      0.775     0.770     0.733       204
+
+RC_open F1 (v1 = 0.000): 0.000
+
+--- IMPROVEMENT vs 16-FEATURE VERSION ---
+  16 features best: 76.96% (RBF, C=100, gamma=0.1)
+  17 features best: 76.96% (RBF)
+  Overall gain    : +0.00%
+  RC_open F1 gain : 0.000 -> 0.000
