@@ -1,4 +1,4 @@
-ï»¿# day17_dashboard_v2.py
+# day17_dashboard_v2.py
 # Regenerates the results dashboard using 17 features.
 
 import os, warnings
@@ -125,18 +125,18 @@ ax5.axvline(x=0.8,color='green',linestyle='--',alpha=0.7,linewidth=1.5)
 for i,(_,row) in enumerate(f1_df.iterrows()):
     ax5.text(row['f1']+0.01,i,f"{row['f1']:.2f}",va='center',fontsize=8)
 ax5.set_xlabel("F1 Score",fontsize=10); ax5.set_xlim(0,1.2)
-ax5.set_title("Per-Class F1 Score â€” RBF SVM (C=100, Î³=0.1) â€” 17 Features",**TITLE_KW)
+ax5.set_title("Per-Class F1 Score — RBF SVM (C=100, ?=0.1) — 17 Features",**TITLE_KW)
 ax5.set_facecolor('#ffffff')
 
 ax6 = fig.add_subplot(gs[2,:])
 sns.heatmap(cm,annot=True,fmt='d',cmap='Blues',xticklabels=labels,yticklabels=labels,
             linewidths=0.3,ax=ax6,cbar_kws={'shrink':0.8},annot_kws={'size':7})
 ax6.set_xlabel("Predicted",fontsize=11); ax6.set_ylabel("Actual",fontsize=11)
-ax6.set_title(f"Confusion Matrix â€” RBF SVM (C=100, Î³=0.1) â€” 17 Features | Test Accuracy: {best_acc:.2f}%",**TITLE_KW)
+ax6.set_title(f"Confusion Matrix — RBF SVM (C=100, ?=0.1) — 17 Features | Test Accuracy: {best_acc:.2f}%",**TITLE_KW)
 ax6.tick_params(axis='x',labelsize=7,rotation=45)
 ax6.tick_params(axis='y',labelsize=7,rotation=0)
 
-fig.suptitle("Kernel-Based Fault Classification in Analog Circuits\nSN Bose National Centre â€” Results Dashboard (v2: 17 Features)",
+fig.suptitle("Kernel-Based Fault Classification in Analog Circuits\nSN Bose Summer Internship, NIT Silchar — Results Dashboard (v2: 17 Features)",
              fontsize=16,fontweight='bold',y=0.98)
 
 out_path=os.path.join(OUT_DIR,"results_dashboard_v2.png")

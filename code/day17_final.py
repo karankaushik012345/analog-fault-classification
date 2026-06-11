@@ -1,4 +1,4 @@
-ï»¿import os, warnings
+import os, warnings
 warnings.filterwarnings('ignore')
 import numpy as np, pandas as pd
 import matplotlib; matplotlib.use('Agg')
@@ -78,7 +78,7 @@ for circ in ['RC','RLC','SALLEN_KEY','RC_LADDER']:
 
 report = classification_report(y_te, best_pred, target_names=labels, digits=3)
 with open(os.path.join(OUT_DIR,'final_results.txt'), 'w', encoding='utf-8') as f:
-    f.write('FINAL RESULTS â€” RBF + Topology Rule\n')
+    f.write('FINAL RESULTS — RBF + Topology Rule\n')
     f.write(f'Overall accuracy: {best_acc:.2f}%\n\n')
     f.write(report)
 print(f'\nFinal accuracy: {best_acc:.2f}%')
@@ -136,18 +136,18 @@ ax5.axvline(x=0.8,color='green',linestyle='--',alpha=0.7,linewidth=1.5)
 for i,(_,row) in enumerate(f1_df.iterrows()):
     ax5.text(row['f1']+0.01,i,str(round(row['f1'],2)),va='center',fontsize=8)
 ax5.set_xlabel('F1 Score',fontsize=10); ax5.set_xlim(0,1.2)
-ax5.set_title('Per-Class F1 â€” RBF + Topology Rule (Final)',**TK)
+ax5.set_title('Per-Class F1 — RBF + Topology Rule (Final)',**TK)
 ax5.set_facecolor('#ffffff')
 
 ax6 = fig.add_subplot(gs[2,:])
 sns.heatmap(cm,annot=True,fmt='d',cmap='Blues',xticklabels=labels,yticklabels=labels,
             linewidths=0.3,ax=ax6,cbar_kws={'shrink':0.8},annot_kws={'size':7})
 ax6.set_xlabel('Predicted',fontsize=11); ax6.set_ylabel('Actual',fontsize=11)
-ax6.set_title('Confusion Matrix â€” RBF + Topology Rule | Accuracy: ' + str(round(best_acc,2)) + '%',**TK)
+ax6.set_title('Confusion Matrix — RBF + Topology Rule | Accuracy: ' + str(round(best_acc,2)) + '%',**TK)
 ax6.tick_params(axis='x',labelsize=7,rotation=45)
 ax6.tick_params(axis='y',labelsize=7,rotation=0)
 
-fig.suptitle('Kernel-Based Fault Classification in Analog Circuits\nSN Bose National Centre â€” FINAL Results (78.43%, Topology-Aware)',
+fig.suptitle('Kernel-Based Fault Classification in Analog Circuits\nSN Bose Summer Internship, NIT Silchar — FINAL Results (78.43%, Topology-Aware)',
              fontsize=16,fontweight='bold',y=0.98)
 
 out_path = os.path.join(OUT_DIR,'results_dashboard_FINAL.png')

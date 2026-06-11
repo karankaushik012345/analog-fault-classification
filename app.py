@@ -167,6 +167,6 @@ with tab3:
 # ---- Footer ----
 st.markdown("---")
 st.markdown("""
-**Project:** SN Bose National Centre Internship 2026 | NIT Silchar  
+**Project:** SN Bose Summer Internship 2026, NIT Silchar | NIT Silchar  
 **Methodology:** LTspice parameter sweeps → 17-feature extraction → SVM kernel comparison → GridSearchCV tuning → topology-aware post-processing
 """)

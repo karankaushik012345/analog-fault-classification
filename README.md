@@ -91,5 +91,5 @@ Python · scikit-learn · LTspice XVII · pandas · matplotlib · scipy · Strea
 
 ## Author
 Karan Kaushik — B.Tech ECE, NIT Silchar  
-SN Bose National Centre for Basic Sciences — Internship 2026  
+SN Bose Summer Internship, NIT Silchar — Internship 2026  
 Supervisor: Dr. Anish Kumar Saha

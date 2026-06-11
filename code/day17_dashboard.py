@@ -220,7 +220,7 @@ ax6.tick_params(axis='y', labelsize=7, rotation=0)
 # ── Main title -----------------------------------------------------
 fig.suptitle(
     "Kernel-Based Fault Classification in Analog Circuits\n"
-    "SN Bose National Centre — Results Dashboard",
+    "SN Bose Summer Internship, NIT Silchar — Results Dashboard",
     fontsize=16, fontweight='bold', y=0.98
 )
 
