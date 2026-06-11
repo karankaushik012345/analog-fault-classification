@@ -2,7 +2,7 @@
 
 
 
-\[!\[Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](YOUR\_STREAMLIT\_LINK\_HERE)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://analogcircuitsfaultclassification.streamlit.app/)
 
 
 
@@ -16,21 +16,21 @@ RC Ladder) using LTspice simulation data and SVM kernel comparison.
 
 \## Live Demo
 
-\*\*\[Try it here](YOUR\_STREAMLIT\_LINK\_HERE)\*\*
+**[Try it here](https://analogcircuitsfaultclassification.streamlit.app/)**
 
 
 
 \## Overview
 
-\- 1019 samples generated from real LTspice `.step param` parameter sweep simulations
+- 1019 samples generated from real LTspice `.step param` parameter sweep simulations
 
-\- 17 physically-derived features (time-domain + frequency-domain)
+- 17 physically-derived features (time-domain + frequency-domain)
 
-\- SVM kernel comparison (Linear, RBF, Polynomial) with GridSearchCV tuning
+- SVM kernel comparison (Linear, RBF, Polynomial) with GridSearchCV tuning
 
-\- Topology-aware post-processing for cross-circuit fault disambiguation
+- Topology-aware post-processing for cross-circuit fault disambiguation
 
-\- \*\*Final accuracy: 78.43%\*\* on 20-class fault classification problem
+- **Final accuracy: 78.43%** on 20-class fault classification problem
 
 
 
