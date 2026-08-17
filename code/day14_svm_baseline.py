@@ -69,7 +69,7 @@ def log(line=""):
     output_lines.append(line)
 
 log("=" * 60)
-log("DAY 14 — HONEST SVM BASELINE ON REAL SWEPT DATA")
+log("DAY 14 —  SVM BASELINE ON REAL SWEPT DATA")
 log("=" * 60)
 log(f"Dataset : {len(df)} samples | {len(FEATURE_COLS)} features | 20 classes")
 log(f"Split   : {int((1-TEST_SIZE)*100)}% train / {int(TEST_SIZE*100)}% test | stratified")
@@ -103,44 +103,3 @@ for name, clf in kernels.items():
     )
     log("Classification Report:")
     log(report)
-
-    # Confusion matrix (summarised — full 20×20 saved to file)
-    cm = confusion_matrix(y_test, y_pred)
-    log(f"Confusion matrix shape: {cm.shape} (saved to results file)")
-    log()
-
-    results[name] = {
-        "test_acc":  test_acc,
-        "cv_mean":   cv_scores.mean(),
-        "cv_std":    cv_scores.std(),
-        "cm":        cm,
-        "report":    report
-    }
-
-# ---- Summary comparison -------------------------------------------
-log("=" * 60)
-log("SUMMARY COMPARISON")
-log("=" * 60)
-log(f"{'Kernel':<14} {'Test Acc':>10} {'CV Mean':>10} {'CV Std':>10}")
-log(f"{'─'*14} {'─'*10} {'─'*10} {'─'*10}")
-for name, r in results.items():
-    log(f"{name:<14} {r['test_acc']*100:>9.2f}% "
-        f"{r['cv_mean']*100:>9.2f}% "
-        f"{r['cv_std']*100:>9.2f}%")
-log()
-log("Day 11 reference (augmented data): Linear 91%, RBF 82%, Poly 89%")
-log("Lower accuracy on real data = expected and correct.")
-
-# ---- Save to file -------------------------------------------------
-with open(OUT_FILE, "w", encoding="utf-8") as f:
-    f.write("\n".join(output_lines))
-    f.write("\n\nFULL CONFUSION MATRICES\n")
-    for name, r in results.items():
-        f.write(f"\n{name}:\n")
-        cm_df = pd.DataFrame(r["cm"],
-                             index=le.classes_,
-                             columns=le.classes_)
-        f.write(cm_df.to_string())
-        f.write("\n")
-
-print(f"\nResults saved -> {OUT_FILE}")

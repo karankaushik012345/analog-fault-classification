@@ -1,4 +1,4 @@
-﻿import os, warnings
+import os, warnings
 warnings.filterwarnings('ignore')
 import numpy as np, pandas as pd
 import matplotlib; matplotlib.use('Agg')
@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, classification_report
 
-REPO = r"C:\Users\karan\Desktop\fault-classification-project"
+REPO = r"C:\\Users\\karan\\Desktop\\Important\\Projects\\fault-classification-project"
 OUT_DIR = os.path.join(REPO, "results")
 os.makedirs(OUT_DIR, exist_ok=True)
 

@@ -1,0 +1,217 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\karan\Desktop\Important\Projects\fault-classification-project\ltspice_models\rlc_normal_sweep.net
+Start Time: Mon Jul  6 13:11:37 2026
+
+.step lval=0.001
+solver = Normal
+Maximum thread count: 8
+tnom = 27
+temp = 27
+method = trap
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.003
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.005
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.007
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.009
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.011
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.013
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.015
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.017
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.019
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.021
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.023
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.025
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.027
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.029
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.031
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.033
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.035
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.037
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.039
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.041
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.043
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.045
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.047
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.049
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.051
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.053
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.055
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.057
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.059
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.061
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.063
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.065
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.067
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.069
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.071
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.073
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.075
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.077
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.079
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.081
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.083
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.085
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.087
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.089
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.091
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.093
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.095
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.097
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.099
+.OP point found by inspection.
+.OP point found by inspection.
+
+.step lval=0.1
+.OP point found by inspection.
+.OP point found by inspection.
+Total elapsed time: 2.553 seconds.
+
+Files loaded:
+C:\Users\karan\Desktop\Important\Projects\fault-classification-project\ltspice_models\rlc_normal_sweep.net
+
