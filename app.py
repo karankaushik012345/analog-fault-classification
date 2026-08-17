@@ -83,7 +83,7 @@ with tab2:
         sample_idx = st.selectbox(
             "Choose a sample (shown as circuit_fault, true label):",
             options=df.index,
-            format_func=lambda i: f"#{i} ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â {df.loc[i,'label']}"
+            format_func=lambda i: f"#{i} ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â {df.loc[i,'label']}"
         )
         row = df.loc[sample_idx]
         true_label = row["label"]
@@ -118,7 +118,7 @@ with tab2:
         if pred == rlc_open_idx and circuit_input == "RC":
             pred = rc_open_idx
             pred_label = "RC_open"
-            st.info("Topology-aware correction applied: RLC_open ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ RC_open "
+            st.info("Topology-aware correction applied: RLC_open ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ RC_open "
                    "(an RC circuit cannot have an RLC-type fault)")
 
         st.success(f"**Predicted:** {pred_label}")
@@ -127,7 +127,7 @@ with tab2:
             if pred_label == true_label:
                 st.success("Correct prediction!")
             else:
-                st.error(f"Incorrect ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â true label was {true_label}")
+                st.error(f"Incorrect ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â true label was {true_label}")
 
         # Show prediction probabilities
         probs = model.predict_proba(X_scaled)[0]
@@ -145,7 +145,7 @@ with tab3:
     df["label"] = df["circuit"] + "_" + df["fault"]
 
     st.write(f"**Total samples:** {len(df)}")
-    st.write(f"**Classes:** {df['label'].nunique()} (4 circuits ÃƒÆ’Ã¢â‚¬â€ 5 fault types)")
+    st.write(f"**Classes:** {df['label'].nunique()} (4 circuits — 5 fault types)")
 
     st.subheader("Samples per class")
     counts = df.groupby(["circuit", "fault"]).size().reset_index(name="count")
@@ -170,6 +170,6 @@ with tab3:
 # ---- Footer ----
 st.markdown("---")
 st.markdown("""
-**Project:** SN Bose Summer Internship 2026, NIT Silchar | NIT Silchar  
-**Methodology:** LTspice parameter sweeps ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ 17-feature extraction ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ SVM kernel comparison ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ GridSearchCV tuning ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ topology-aware post-processing
+**Project:** SN Bose Summer Internship 2026, NIT Silchar  
+**Methodology:** LTspice parameter sweeps → 17-feature extraction → SVM kernel comparison → GridSearchCV tuning → topology-aware post-processing
 """)
