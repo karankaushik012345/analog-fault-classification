@@ -75,7 +75,7 @@ with tab2:
         "dominant_freq","spectral_energy","spec_centroid",
         "bandwidth","spec_entropy","energy",
         "zero_crossing_rate","crest_factor","dc_level"
-            format_func=lambda i: f"#{i} — {df.loc[i,'label']}"
+    ]
 
     mode = st.radio("Input method:", ["Pick a sample from dataset", "Enter values manually"])
 
@@ -83,7 +83,7 @@ with tab2:
         sample_idx = st.selectbox(
             "Choose a sample (shown as circuit_fault, true label):",
             options=df.index,
-            format_func=lambda i: f"#{i} — {df.loc[i,'label']}"
+            format_func=lambda i: f"#{i} - {df.loc[i,'label']}"
         )
         row = df.loc[sample_idx]
         true_label = row["label"]
@@ -107,7 +107,7 @@ with tab2:
 
     if st.button("Predict Fault Type", type="primary"):
         X_scaled = scaler.transform(X_input)
-            st.info("Topology-aware correction applied: RLC_open → RC_open "
+        pred = model.predict(X_scaled)[0]
         pred_label = le.inverse_transform([pred])[0]
 
         # Apply topology-aware rule
@@ -115,10 +115,10 @@ with tab2:
         rlc_open_idx = labels_list.index("RLC_open")
         rc_open_idx  = labels_list.index("RC_open")
 
-                st.error(f"Incorrect — true label was {true_label}")
+        if pred == rlc_open_idx and circuit_input == "RC":
             pred = rc_open_idx
             pred_label = "RC_open"
-            st.info("Topology-aware correction applied: RLC_open → RC_open "
+            st.info("Topology-aware correction applied: RLC_open ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ RC_open "
                    "(an RC circuit cannot have an RLC-type fault)")
 
         st.success(f"**Predicted:** {pred_label}")
@@ -127,7 +127,7 @@ with tab2:
             if pred_label == true_label:
                 st.success("Correct prediction!")
             else:
-                st.error(f"Incorrect — true label was {true_label}")
+                st.error(f"Incorrect ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â true label was {true_label}")
 
         # Show prediction probabilities
         probs = model.predict_proba(X_scaled)[0]
@@ -145,7 +145,7 @@ with tab3:
     df["label"] = df["circuit"] + "_" + df["fault"]
 
     st.write(f"**Total samples:** {len(df)}")
-    st.write(f"**Classes:** {df['label'].nunique()} (4 circuits Ã¢â‚¬â€ 5 fault types)")
+    st.write(f"**Classes:** {df['label'].nunique()} (4 circuits ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 5 fault types)")
 
     st.subheader("Samples per class")
     counts = df.groupby(["circuit", "fault"]).size().reset_index(name="count")
@@ -170,6 +170,6 @@ with tab3:
 # ---- Footer ----
 st.markdown("---")
 st.markdown("""
-**Project:** SN Bose Summer Internship 2026, NIT Silchar  
-**Methodology:** LTspice parameter sweeps Ã¢â€ â€™ 17-feature extraction Ã¢â€ â€™ SVM kernel comparison Ã¢â€ â€™ GridSearchCV tuning Ã¢â€ â€™ topology-aware post-processing
+**Project:** SN Bose Summer Internship 2026, NIT Silchar | NIT Silchar  
+**Methodology:** LTspice parameter sweeps ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ 17-feature extraction ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ SVM kernel comparison ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ GridSearchCV tuning ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ topology-aware post-processing
 """)
