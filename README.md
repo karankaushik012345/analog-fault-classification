@@ -36,37 +36,37 @@ RC Ladder) using LTspice simulation data and SVM kernel comparison.
 
 ## Project Structure
 fault-classification-project/
-├── app.py                  # Streamlit web application
-├── requirements.txt
-├── data/
-│   ├── master_dataset_sweep.csv   # Raw waveform dataset (1019 samples)
-│   └── features_v2.csv            # Extracted 17-feature dataset
-├── model/
-│   ├── model.pkl            # Trained RBF SVM
-│   ├── scaler.pkl           # StandardScaler
-│   └── label_encoder.pkl    # Label encoder for 20 classes
-├── code/                    # Full Python pipeline (sweep parsing,
-│                              feature extraction, training, dashboard)
-├── results/                 # Dashboard, classification reports
-└── ltspice_models/          # LTspice .asc files with sweep directives
+â”œâ”€â”€ app.py                  # Streamlit web application
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ data/
+â”‚   â”œâ”€â”€ master_dataset_sweep.csv   # Raw waveform dataset (1019 samples)
+â”‚   â””â”€â”€ features_v2.csv            # Extracted 17-feature dataset
+â”œâ”€â”€ model/
+â”‚   â”œâ”€â”€ model.pkl            # Trained RBF SVM
+â”‚   â”œâ”€â”€ scaler.pkl           # StandardScaler
+â”‚   â””â”€â”€ label_encoder.pkl    # Label encoder for 20 classes
+â”œâ”€â”€ code/                    # Full Python pipeline (sweep parsing,
+â”‚                              feature extraction, training, dashboard)
+â”œâ”€â”€ results/                 # Dashboard, classification reports
+â””â”€â”€ ltspice_models/          # LTspice .asc files with sweep directives
 
 ## Methodology
-1. **Circuit simulation** — 4 circuit topologies modeled in LTspice XVII:
+1. **Circuit simulation** â€” 4 circuit topologies modeled in LTspice XVII:
    - RC low-pass filter
    - RLC series circuit (underdamped)
    - Sallen-Key active filter
    - RC ladder network (cascaded stages)
 
-2. **Parameter sweeps** — `.step param` directive generates ~51 independent
+2. **Parameter sweeps** â€” `.step param` directive generates ~51 independent
    transient simulations per fault class by sweeping component values
    (resistance, capacitance) across physically meaningful ranges.
 
-3. **Feature extraction** — 17 features per waveform:
+3. **Feature extraction** â€” 17 features per waveform:
    - Time-domain: peak voltage, RMS, rise time, settling time, skewness, kurtosis, dc_level
    - Frequency-domain: dominant frequency, spectral energy/centroid/entropy, bandwidth
    - Structural: zero-crossing rate, crest factor, energy
 
-4. **Classification** — SVM with 3 kernels evaluated, hyperparameters tuned
+4. **Classification** â€” SVM with 3 kernels evaluated, hyperparameters tuned
    via GridSearchCV (5-fold CV), topology-aware post-processing applied.
 
 ## Results
@@ -83,13 +83,13 @@ fault-classification-project/
 Replacing Python-augmented training data with physics-based LTspice 
 parameter sweeps reduced reported accuracy from 91% to ~76%, demonstrating 
 that augmentation had inflated classifier performance by ~14 percentage 
-points — the model was learning the augmentation transform rather than 
+points â€” the model was learning the augmentation transform rather than 
 genuine circuit fault signatures.
 
 ## Tech Stack
-Python · scikit-learn · LTspice XVII · pandas · matplotlib · scipy · Streamlit
+Python Â· scikit-learn Â· LTspice XVII Â· pandas Â· matplotlib Â· scipy Â· Streamlit
 
 ## Author
-Karan Kaushik — B.Tech ECE, NIT Silchar  
-SN Bose Summer Internship, NIT Silchar — Internship 2026  
+Karan Kaushik â€” B.Tech ECE, NIT Silchar  
+SN Bose Summer Internship, NIT Silchar â€” Internship 2026  
 Supervisor: Dr. Anish Kumar Saha
